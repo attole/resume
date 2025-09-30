@@ -8,7 +8,7 @@
 	"basics": {
 		"name": "Sergii Kucherenko",
 		"label": "full-stack developer",
-		"image": "http://localhost:3000/image.jpg",
+		"image": "http://localhost:3000/images/selfie.jpg",
 		"email": "sergii.kucherenko.a24d3@gmail.com",
 		"phone": "(098) 046-6027",
 		"summary": "21-year-old motivated full-stack developer with a Bachelor’s degree in Software Engineering. Strong foundation in programming concepts, OOP, and software design principles. Experienced in building applications on ASP.NET Core with layered, clean architecture, including authentication, ORM, multiple SQL/NoSQL databases, caching, concurrency handling, and Docker-based containerization. Most confident in C# and JavaScript/TypeScript, with additional experience in Python for basic data analysis and web scraping. Quick learner, passionate about creating clean, scalable, and maintainable systems, exploring how technologies work under the hood, and applying modern principles to optimize real-world applications. ",
