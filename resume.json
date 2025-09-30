@@ -1,0 +1,164 @@
+{
+	"$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+	"meta": {
+		"theme": "jsonresume-theme-stackoverflow",
+		"version": "v1.0.0",
+		"lastModified": "2025-09-26"
+	},
+	"basics": {
+		"name": "Sergii Kucherenko",
+		"label": "full-stack developer",
+		"image": "http://localhost:3000/image.jpg",
+		"email": "sergii.kucherenko.a24d3@gmail.com",
+		"phone": "(098) 046-6027",
+		"summary": "21-year-old motivated full-stack developer with a Bachelor’s degree in Software Engineering. Strong foundation in programming concepts, OOP, and software design principles. Experienced in building applications on ASP.NET Core with layered, clean architecture, including authentication, ORM, multiple SQL/NoSQL databases, caching, concurrency handling, and Docker-based containerization. Most confident in C# and JavaScript/TypeScript, with additional experience in Python for basic data analysis and web scraping. Quick learner, passionate about creating clean, scalable, and maintainable systems, exploring how technologies work under the hood, and applying modern principles to optimize real-world applications. ",
+		"location": {
+			"city": "Kyiv",
+			"countryCode": "Ukraine"
+		},
+		"profiles": [
+			{
+				"network": "GitHub",
+				"username": "attole",
+				"url": "https://github.com/attole"
+			},
+			{
+				"network": "LinkedIn",
+				"username": "Sergii Kucherenko",
+				"url": "https://www.linkedin.com/in/sergii-kucherenko-7262492b4/"
+			},
+			{
+				"network": "Telegram",
+				"username": "@attole",
+				"url": "https://t.me/attole"
+			}
+		]
+	},
+	"education": [
+		{
+			"institution": "National Technical University of Ukraine \"Igor Sikorsky Kyiv Polytechnic Institute\"",
+			"url": "https://osvita.kpi.ua/121_OPPB_IPZMIPS",
+			"area": "Software Engineering, Faculty of Applied Mathematics",
+			"studyType": "Bachelor",
+			"startDate": "2021-09-01",
+			"endDate": "2025-06-01",
+			"score": "92/100"
+		}
+	],
+	"skills": [
+		{
+			"name": "Programming Languages",
+			"level": "Advanced",
+			"keywords": ["C#", "JavaScript", "TypeScript"]
+		},
+		{
+			"name": "Programming Languages",
+			"level": "Intermediate",
+			"keywords": ["Python"]
+		},
+		{
+			"name": "Frontend Development",
+			"level": "Intermediate",
+			"keywords": ["Angular", "HTML", "SCSS", "DOM"]
+		},
+		{
+			"name": "Backend Development",
+			"level": "Intermediate",
+			"keywords": ["ASP.NET Core", ".NET Core", "Entity Framework Core"]
+		},
+		{
+			"name": "Databases",
+			"level": "Advanced",
+			"keywords": ["PostgreSQL", "MySQL", "Redis", "GraphQL"]
+		},
+		{
+			"name": "DevOps / Tools",
+			"level": "Intermediate",
+			"keywords": ["Git", "Docker"]
+		}
+	],
+	"languages": [
+		{
+			"language": "Ukrainian",
+			"fluency": "Native speaker"
+		},
+		{
+			"language": "English core",
+			"fluency": "Advanced (C1)"
+		},
+		{
+			"language": "English speaking & writing",
+			"fluency": "Intermediate (B2)"
+		}
+	],
+	"interests": [
+		{
+			"name": "Sport",
+			"keywords": ["Powerlifting", "Bodybuilding", "Running"]
+		},
+		{
+			"name": "Music",
+			"keywords": [
+				"Metalcore",
+				"Shoegaze",
+				"Rock",
+				"Indi rock",
+				"Hip hop",
+				"Alternative"
+			]
+		},
+		{
+			"name": "Psychology",
+			"keywords": ["Cognitive Pshychology", "Physiology", "Etymology"]
+		}
+	],
+	"projects": [
+		{
+			"name": "MeetPoint",
+			"startDate": "2025-05-01",
+			"summary": "Web application that simplifies meetup organizing by calculating optimal locations for multiple users based on routes, travel times, and real-time position updates. ",
+			"highlights": [
+				"Clean architecture",
+				"ASP.NET Core",
+				"ASP.NET Core Web API",
+				"ASP.NET Core Identity / JWT",
+				"Entity Framework Core",
+				"PostgreSQL / Redis",
+				"SignalR",
+				"Angular / Material UI 3",
+				"RxJS",
+				"Google Maps Platform",
+				"Docker"
+			],
+			"url": "https://github.com/attole/MeetPoint"
+		},
+		{
+			"name": "Obsidian codebase",
+			"startDate": "2025-08-01",
+			"summary": "Personal codebase powering my Obsidian vault with custom scripts, utilities, and integrations. ",
+			"highlights": ["JavaScript", "CSS", "DOM"],
+			"url": "https://github.com/attole/obsidian-codebase"
+		},
+		{
+			"name": "Rewriter",
+			"startDate": "2024-04-01",
+			"endDate": "2024-05-01",
+			"summary": "Long-running Windows background service for automatic file conversion to PDF. ",
+			"highlights": [
+				".NET",
+				".NET Worker Service",
+				".NET Configuration API",
+				"FluentValidation"
+			],
+			"url": "https://github.com/attole/Rewriter"
+		},
+		{
+			"name": "Python snippets",
+			"startDate": "2024-03-01",
+			"endDate": "2024-11-01",
+			"summary": "A collection of small Python scripts and tasks for data analysis",
+			"highlights": ["Python", "NumPy / Matplotlib", "NLTK", "Tkinter"],
+			"url": "https://github.com/attole/python-data-snippets/"
+		}
+	]
+}
