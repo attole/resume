@@ -8,7 +8,7 @@
 	"basics": {
 		"name": "Sergii Kucherenko",
 		"label": "full-stack developer",
-		"image": "../../host/images/selfie.jpg",
+		"image": "../../docs/images/selfie.jpg",
 		"email": "sergii.kucherenko.a24d3@gmail.com",
 		"phone": "(098) 046-6027",
 		"summary": "21-year-old full-stack developer (C#, JS, TS). Experienced in building applications using .NET and ASP.NET Core frameworks, covering layered architecture, authentication, ORM, SQL/NoSQL databases, caching, concurrency handling, and Docker-based containerization. I am passionate about creating clean, efficient solutions and exploring how technologies work under the hood. A quick learner, focused on using modern programming concepts and best practices to build scalable, maintainable, and optimized systems. I enjoy transparent communication and tackling new challenges.",
