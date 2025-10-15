@@ -1,0 +1,174 @@
+{
+	"$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+	"meta": {
+		"theme": "jsonresume-theme-stackoverflow",
+		"version": "v1.0.0",
+		"lastModified": "2025-09-26"
+	},
+	"basics": {
+		"name": "Sergii Kucherenko",
+		"label": "full-stack developer",
+		"image": "../../host/images/selfie.jpg",
+		"email": "sergii.kucherenko.a24d3@gmail.com",
+		"phone": "(098) 046-6027",
+		"summary": "21-year-old full-stack developer (C#, JS, TS). Experienced in building applications using .NET and ASP.NET Core frameworks, covering layered architecture, authentication, ORM, SQL/NoSQL databases, caching, concurrency handling, and Docker-based containerization. I am passionate about creating clean, efficient solutions and exploring how technologies work under the hood. A quick learner, focused on using modern programming concepts and best practices to build scalable, maintainable, and optimized systems. I enjoy transparent communication and tackling new challenges.",
+		"location": {
+			"city": "Kyiv",
+			"countryCode": "Ukraine"
+		},
+		"profiles": [
+			{
+				"network": "GitHub",
+				"username": "attole",
+				"url": "https://github.com/attole"
+			},
+			{
+				"network": "LinkedIn",
+				"username": "Sergii Kucherenko",
+				"url": "https://www.linkedin.com/in/sergii-kucherenko/"
+			},
+			{
+				"network": "Telegram",
+				"username": "@attole",
+				"url": "https://t.me/attole"
+			}
+		]
+	},
+	"education": [
+		{
+			"institution": "National Technical University of Ukraine \"Igor Sikorsky Kyiv Polytechnic Institute\"",
+			"url": "https://osvita.kpi.ua/121_OPPB_IPZMIPS",
+			"area": "Software Engineering, Faculty of Applied Mathematics",
+			"studyType": "Bachelor",
+			"startDate": "2021-09-01",
+			"endDate": "2025-06-01",
+			"score": "92/100"
+		}
+	],
+	"skills": [
+		{
+			"name": "Programming Languages",
+			"level": "Advanced",
+			"keywords": ["C#", "JavaScript", "TypeScript", "Python"]
+		},
+		{
+			"name": "Backend and frameworks",
+			"level": "Advanced",
+			"keywords": [
+				".NET Core",
+				"Worker Services",
+				"SignalR",
+				"Configuration API",
+				"ASP.NET Core",
+				"Web API",
+				"MVC",
+				"Identity"
+			]
+		},
+		{
+			"name": "Architecture and principles",
+			"level": "Advanced",
+			"keywords": ["OOP", "SOLID", "monolith", "microservices"]
+		},
+		{
+			"name": "Databases",
+			"level": "Advanced",
+			"keywords": [
+				"Entity Framework Core",
+				"MySQL",
+				"PostgreSQL",
+				"Redis",
+				"GraphQL"
+			]
+		},
+		{
+			"name": "Frontend",
+			"level": "Intermediate",
+			"keywords": [
+				"HTML",
+				"CSS/SCSS",
+				"DOM",
+				"Angular (v20)",
+				"Angular Material (v3), RxJS"
+			]
+		},
+		{
+			"name": "APIs and networking",
+			"level": "Advanced",
+			"keywords": ["Rest APIs", "HTTP", "JWT"]
+		},
+		{
+			"name": "Cloud and messaging (basics)",
+			"level": "Intermediate",
+			"keywords": ["RabbitMQ", "Azure", "AWS"]
+		},
+		{
+			"name": "DevOps and tools",
+			"level": "Intermediate",
+			"keywords": ["Swagger", "Postman", "Git", "Docker", "VMs"]
+		}
+	],
+	"languages": [
+		{
+			"language": "Ukrainian",
+			"fluency": "Native speaker"
+		},
+		{
+			"language": "English core",
+			"fluency": "C1"
+		}
+	],
+	"projects": [
+		{
+			"name": "Obsidian codebase",
+			"startDate": "2025-07-01",
+			"summary": "Personal codebase for Obsidian vault with custom scripts, utilities, and integrations.",
+			"highlights": [
+				"Implemented multiple extensible base entity managers;",
+				"Designed command-like syntax and a custom date expression parser;",
+				"Implemented enhancements to the caching system, adding custom functionality and optimizations;",
+				"Developed various QoL enhancements alongside new feature implementation.",
+				"Obsidian development: Obsidian, CustomJS, QuickAdd, Dataview and other plugin APIs.",
+				"Web technologies: HTML, CSS, DOM, JavaScript."
+			],
+			"url": "https://github.com/attole/obsidian-codebase"
+		}
+	],
+	"work": [
+		{
+			"name": "MeetPoint",
+			"position": "full-stack developer",
+			"startDate": "2024-05-01",
+			"endDate": "2025-06-01",
+			"summary": "Web application to simplify meetup organizing by calculating optimal locations for multiple users.",
+			"highlights": [
+				"Architected a clean monolithic system from the ground up, aligned with modern best practices;",
+				"Implemented core functionality and contributed to establishing team coding standards;",
+				"Set up and managed database schemas from the ground up, ensuring optimization and maintenance;",
+				"Implemented JWT-based authorization and managed SignalR sessions;",
+				"Initialized and maintained project infrastructure;",
+				"Actively participated in planning, code reviews, and team communications.",
+				"Backend: ASP.NET Wep API (REST), ASP.NET Core Identity, Google Maps Platform.",
+				"Databases: EF Core, PostgreSQL, Redis.",
+				"Frontend: Angular (v20), Angular Material (v3), RxJS, Google Maps Platform.",
+				"Infrastructure: Git, Docker, Swagger."
+			],
+			"url": "https://github.com/attole/MeetPoint"
+		},
+		{
+			"name": "Rewriter",
+			"position": "developer",
+			"startDate": "2023-12-01",
+			"endDate": "2024-03-01",
+			"summary": "Long-running Windows background service for automatic file conversion to PDF. ",
+			"highlights": [
+				"Was responsible for designing the service architecture and structure;",
+				"Worked closely with the Configuration API and implemented validation workflow;",
+				"Participated in testing and maintenance processes;",
+				"Backend: .NET Core, Worker Service, Configuration API",
+				"Infrastructure and tools: FluentValidation, Microsoft Office Interop API, Windows Service Control Manager, Git"
+			],
+			"url": "https://github.com/attole/Rewriter"
+		}
+	]
+}
