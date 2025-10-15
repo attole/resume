@@ -1,6 +1,6 @@
 # Resume
 
-This repository contains my resume in multiple formats along with the scripts used to generate them.
+This repository contains my resume in JSON format along with the scripts used to generate HTML and PDF versions. The HTML version is hosted on GitHub Pages. This repo is for managing and hosting my resume, not a general resume generator.
 
 ## Resume Versions
 
@@ -29,11 +29,13 @@ cd resume
 # install dependencies
 npm install
 
-# edit json file or create new one
+# edit json file
+
+# or create a new one:
 npx resumed init ./src/base/resume.json
 
-# any images on should be located under ./host/images and referenced by:
-# - ../../host/images/ for local/non-hosted HTML
+# any images on should be located under ./docs/images and referenced by:
+# - ../../docs/images/ for local/non-hosted HTML
 # - images/ for hosted HTML
 
 # validate on big changes
@@ -45,7 +47,7 @@ npx resumed render ./src/base/resume.json -o ./src/base/resume.html
 # create copy to ./edited
 cp ./src/base/resume.html ./src/edited
 
-# edit copy to whatever needed, and copy final version to ./host/
+# edit copy to whatever needed, and move final version under ./docs/index.html
 
 # generate PDF
 npm run generate-pdf
