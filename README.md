@@ -1,6 +1,9 @@
 # Resume
 
-This repository contains my resume in JSON format along with the scripts used to generate HTML and PDF versions. The HTML version is hosted on GitHub Pages. This repo is for managing and hosting my resume, not a general resume generator.
+> Personal resume in JSON format along with the scripts used to generate HTML and PDF versions.
+> The HTML version is hosted on GitHub Pages. This repo is for managing and hosting my resume, not a general resume generator.
+
+---
 
 ## Resume Versions
 
