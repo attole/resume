@@ -1,15 +1,18 @@
 most of json themes are broken in one way or another
-stackoverflow theme is fine, but not exported to pdf by resumed
+stackoverflow theme is fine, but not exported to pdf by resumed default solution
 
-generated html is changed and polished:
-- deleted all bars and levels elements
-- changed all big heading to smaller or just normal text
-- image is made smaller
-- all double <p> are simplified to single one, added consistency to others text elements
-- manually added "categories" to hightlight lists
-- hover background is added to all list items
-- links on projects/work are changed and relocated
-- dates on projects/work are set to always be on right
-- deleted company splitter on work items
+structural simplifications:
+- removed duplicate HTML elements to single one
+- converted all large headings to smaller headings or normal text for better readability
+- deleted bars, levels, and company splitters in work items
 
-on pdf specific html copy (under src/edited/) skills are simplified to one inline list
+styling enhancements:
+- added hover background effect to all list items
+- reduced image sizes for a more compact layout
+
+content and layout improvements:
+- skills: flattened into a single inline category-based list
+- projects/work:
+    - links updated and relocated for clarity
+    - dates consistently aligned to the right
+    - highlights restructured into category-based lists

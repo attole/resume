@@ -20,7 +20,7 @@ This repository contains my resume in JSON format along with the scripts used to
 
 An external HTML to PDF converter is used because the HTML is manually polished before conversion, so `resumed export` cannot be applied.
 
-If you want to use this repo on own workflow:
+If you want to use this repo on your own workflow:
 
 ```bash
 git clone https://github.com/attole/resume.git
@@ -30,7 +30,6 @@ cd resume
 npm install
 
 # edit json file
-
 # or create a new one:
 npx resumed init ./src/base/resume.json
 
@@ -47,7 +46,11 @@ npx resumed render ./src/base/resume.json -o ./src/base/resume.html
 # create copy to ./edited
 cp ./src/base/resume.html ./src/edited
 
-# edit copy to whatever needed, and move final version under ./docs/index.html
+# edit copy to whatever needed
+# check [tips](./src/edited/tips.txt) for details on my changes to html
+
+# create copy of the final version under ./docs/index.html for hosting
+cp -force .\src\edited\resume.html .\docs\index.html
 
 # generate PDF
 npm run generate-pdf

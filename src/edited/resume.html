@@ -752,7 +752,9 @@
       </header>
       <section class="main-summary">
         <div>
-          <p>21-year-old full-stack developer (C#, JS, TS). Experienced in building applications using .NET and ASP.NET Core frameworks, covering layered architecture, authentication, ORM, SQL/NoSQL databases, caching, concurrency handling, and Docker-based containerization. I am passionate about creating clean, efficient solutions and exploring how technologies work under the hood. A quick learner, focused on using modern programming concepts and best practices to build scalable, maintainable, and optimized systems. I enjoy transparent communication and tackling new challenges.</p>
+          <p>
+              21-year-old full-stack developer (C#, JS, TS). Experienced in building applications using .NET and ASP.NET Core frameworks, covering layered architecture, authentication, ORMs, SQL/NoSQL databases, caching, concurrency handling, real-time updates, unit testing, and Docker-based containerization. I am passionate about creating clean, efficient solutions and exploring how technologies work under the hood. A quick learner, focused on using modern programming concepts and best practices to build scalable, maintainable, and optimized systems. I enjoy transparent communication and tackling new challenges.
+          </p>
         </div>
       </section>
     </section>
@@ -764,31 +766,22 @@
         <div class="highlights">
           <ul>
             <li>
-              <p>C#, JavaScript, TypeScript, Python</p>
+              <p><b>General:</b> C#, JavaScript, TypeScript, Python, (OOP, OOD, SOLID, monolith, microservices)</p>
             </li>
             <li>
-              <p>.NET Core (Worker Service, SignalR, Configuration API)</p>
+              <p><b>.NET Core:</b> Worker Service, Configuration API, CommandLine, xUnit, Moq</p>
             </li>
             <li>
-              <p>ASP.NET Core (Web API, MVC, Identity Core)</p>
+              <p><b>ASP.NET Core:</b> Web API, MVC, Identity Core, SignalR</p>
             </li>
             <li>
-              <p>OOP, SOLID, monolith, microservices</p>
+              <p><b>Databases:</b> Entity Framework Core, PostgreSQL, MySQL, MS SQL, Redis, GraphQL</p>
             </li>
             <li>
-              <p>Entity Framework Core, MySQL, PostgreSQL, Redis, GraphQL</p>
+              <p><b>Frontend / Web:</b> HTML, CSS/SCSS, DOM, Angular (v20), RxJS, HTTP, REST APIs, JWT, Swagger, Postman</p>
             </li>
             <li>
-              <p>HTML, CSS/SCSS, DOM, Angular (v20), Angular Material (v3), RxJS</p>
-            </li>
-            <li>
-              <p>HTTP, REST APIs, JWT</p>
-            </li>
-            <li>
-              <p>Basics of RabbitMQ, Azue, AWS</p>
-            </li>
-            <li>
-              <p>Git, Docker, VMs, Swagger, Postman</p>
+              <p><b>Infrastructure:</b> Git, Docker, VMs, basics of RabbitMQ, Azue, AWS</p>
             </li>
           </ul>
         </div>
@@ -824,11 +817,8 @@
               </li>
               <li>
                 <p>
-                <p>Set up and managed database schemas from the ground up, ensuring optimization and maintenance;</p>
+                <p>Set up database schemas, ensuring optimization and maintenance, implemented JWT-based authorization and SignalR sessions;</p>
                 </p>
-              </li>
-              <li>
-                <p>Implemented JWT-based authorization and managed SignalR sessions;</p>
               </li>
               <li>
                 <p>Initialized and maintained project infrastructure;</p>
@@ -836,9 +826,9 @@
               <li>
                 <p>Actively participated in planning, code reviews, and team communications.</p>
               </li>
-              <p><b>Backend</b> ASP.NET Wep API (REST), ASP.NET Core Identity, Google Maps Platform, EF Core, PostgreSQL, Redis.</p>
+              <p><b>Backend</b> ASP.NET (Web API), ASP.NET Core Identity, Google Maps Platform, EF Core, PostgreSQL, Redis, xUnit, Moq, Swagger.</p>
               <p><b>Frontend:</b> Angular (v20), Angular Material (v3), RxJS, Google Maps Platform.</p>
-              <p><b>Infrastructure:</b> Git, Docker, Swagger.</p>
+              <p><b>Infrastructure:</b> Git, Docker</p>
             </ul>
           </div>
         </section>
@@ -863,10 +853,7 @@
                 <p>Was responsible for designing the service architecture and structure;</p>
               </li>
               <li>
-                <p>Worked closely with the Configuration API;</p>
-              </li>
-              <li>
-                <p> Implemented validation workflow;</p>
+                <p>Worked closely with the Configuration API and implemented validation workflow</p>
               </li>
               <li>
                 <p>Participated in testing and maintenance processes.</p>
@@ -881,9 +868,40 @@
     </section>
     <section class="section">
       <header>
-        <h2 class='section-title'>Projects <span class="item-count">(1)</span></h2>
+        <h2 class='section-title'>Projects <span class="item-count">(2)</span></h2>
       </header>
       <section id="projects">
+        <section class="project-item">
+            <label for="project-item-0"></label>
+            <header class="clear">
+            <div class="position">ETL CLI test tool</div>
+            <div class="date">
+                <span class="startDate">Nov 2025</span>
+                <span class="endDate">- Nov 2025</span>
+            </div>
+            </header>
+            <div class="item">
+            <div class="summary">
+                <p>
+                ETL CLI test tool with data preprocessing and bulk import from csv to MS SQL database.
+                <a target="_blank" href="https://github.com/attole/etl-cli-test-project">Github link</a>
+                </p>
+            </div>
+            <ul class="highlights">
+                <li>
+                <p>Implemented streamed, type-agnostic CSV import handling large files efficiently.</p>
+                </li>
+                <li>
+                <p>Designed data preprocessing pipeline for cleaning, transforming datasets with optimized memory usage and bulk insertions</p>
+                </li>
+                <li>
+                <p>Developed database schema with computed columns and performance-focused indexes</p>
+                </li>
+                <p><b>Tech stack:</b> .NET console application, CommandLine, MS SQL.</p>
+                <p><b>Tools:</b> DI container, Git, Docker, CsvHelper, FastMember.</p>
+            </ul>
+            </div>
+        </section>
         <section class="project-item">
           <label for="project-item-0"></label>
           <header class="clear">
@@ -902,23 +920,16 @@
             </div>
             <ul class="highlights">
               <li>
-                <p>Implemented multiple extensible base entity managers;</p>
-              </li>
-              <li>
                 <p>Designed command-like syntax and a custom date expression parser;</p>
               </li>
               <li>
-                <p>Implemented enhancements to the caching system, adding custom handlers and optimizations;</p>
-              </li>
-              <li>
-                <p>Developed various QoL features alongside new functionality.</p>
+                <p>Implemented enhancements and optimizations to the caching system and entity managers;</p>
               </li>
               <p><b>Obsidian development:</b> Obsidian, CustomJS, QuickAdd, Dataview and other plugin APIs.</p>
               <p><b>Web technologies:</b> HTML, CSS, DOM, JavaScript.</p>
             </ul>
           </div>
         </section>
-      </section>
     </section>
     <section class="section">
       <header>

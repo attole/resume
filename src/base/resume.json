@@ -11,7 +11,7 @@
 		"image": "../../docs/images/selfie.jpg",
 		"email": "sergii.kucherenko.a24d3@gmail.com",
 		"phone": "(098) 046-6027",
-		"summary": "21-year-old full-stack developer (C#, JS, TS). Experienced in building applications using .NET and ASP.NET Core frameworks, covering layered architecture, authentication, ORM, SQL/NoSQL databases, caching, concurrency handling, and Docker-based containerization. I am passionate about creating clean, efficient solutions and exploring how technologies work under the hood. A quick learner, focused on using modern programming concepts and best practices to build scalable, maintainable, and optimized systems. I enjoy transparent communication and tackling new challenges.",
+		"summary": "21-year-old full-stack developer (C#, JS, TS). Experienced in building applications using .NET and ASP.NET Core frameworks, covering layered architecture, authentication, ORMs, SQL/NoSQL databases, caching, concurrency handling, real-time updates, unit testing, and Docker-based containerization. I am passionate about creating clean, efficient solutions and exploring how technologies work under the hood. A quick learner, focused on using modern programming concepts and best practices to build scalable, maintainable, and optimized systems. I enjoy transparent communication and tackling new challenges.",
 		"location": {
 			"city": "Kyiv",
 			"countryCode": "Ukraine"
@@ -47,65 +47,59 @@
 	],
 	"skills": [
 		{
-			"name": "Programming Languages",
+			"name": "General",
 			"level": "Advanced",
-			"keywords": ["C#", "JavaScript", "TypeScript", "Python"]
+			"keywords": ["C#", "JavaScript", "TypeScript", "Python", "(OOP, OOD, SOLID, monolith, microservices)"]
 		},
 		{
-			"name": "Backend and frameworks",
+			"name": ".Net Core",
 			"level": "Advanced",
 			"keywords": [
-				".NET Core",
-				"Worker Services",
-				"SignalR",
+				"Worker Service",
 				"Configuration API",
-				"ASP.NET Core",
-				"Web API",
-				"MVC",
-				"Identity"
+				"CommandLine",
+				"xUnit",
+				"Moq"
 			]
 		},
 		{
-			"name": "Architecture and principles",
+			"name": "ASP.NET",
 			"level": "Advanced",
-			"keywords": ["OOP", "SOLID", "monolith", "microservices"]
+			"keywords": ["Web API", "MVC", "Identity Core", "SignalR"]
 		},
 		{
 			"name": "Databases",
 			"level": "Advanced",
 			"keywords": [
 				"Entity Framework Core",
-				"MySQL",
 				"PostgreSQL",
+				"MySQL",
+				"MS SQL",
 				"Redis",
 				"GraphQL"
 			]
 		},
 		{
-			"name": "Frontend",
+			"name": "Frontend / Web",
 			"level": "Intermediate",
 			"keywords": [
 				"HTML",
 				"CSS/SCSS",
 				"DOM",
 				"Angular (v20)",
-				"Angular Material (v3), RxJS"
+				"Angular Material (v3)",
+				"RxJS",
+				"HTTP",
+				"REST APIs",
+				"JWT",
+				"Swagger",
+				"Postman"
 			]
 		},
 		{
-			"name": "APIs and networking",
-			"level": "Advanced",
-			"keywords": ["Rest APIs", "HTTP", "JWT"]
-		},
-		{
-			"name": "Cloud and messaging (basics)",
+			"name": "Infrastructure",
 			"level": "Intermediate",
-			"keywords": ["RabbitMQ", "Azure", "AWS"]
-		},
-		{
-			"name": "DevOps and tools",
-			"level": "Intermediate",
-			"keywords": ["Swagger", "Postman", "Git", "Docker", "VMs"]
+			"keywords": ["Git", "Docker", "VMs", "basics of RabbitMQ, Azure, AWS"]
 		}
 	],
 	"languages": [
@@ -119,16 +113,28 @@
 		}
 	],
 	"projects": [
+  	{
+  		"name": "ETL CLI test tool",
+  		"startDate": "2025-11-01",
+      "endDate": "2025-11-31",
+  		"summary": "ETL CLI test tool with data preprocessing and bulk import from csv to MS SQL database.",
+  		"highlights": [
+  			"Implemented streamed, type-agnostic CSV import handling large files efficiently",
+        "Designed data preprocessing pipeline for cleaning, transforming datasets with optimized memory usage and bulk insertions",
+        "Developed database schema with computed columns and performance-focused indexes",
+    	  "Tech stack: .NET console application, CommandLine, MS SQL",
+        "Tools: DI container, Git, Docker, CsvHelper, FastMember"
+  		],
+  		"url": "https://github.com/attole/etl-cli-test-project"
+  	},
 		{
 			"name": "Obsidian codebase",
 			"startDate": "2025-07-01",
 			"summary": "Personal codebase for Obsidian vault with custom scripts, utilities, and integrations.",
 			"highlights": [
-				"Implemented multiple extensible base entity managers;",
 				"Designed command-like syntax and a custom date expression parser;",
-				"Implemented enhancements to the caching system, adding custom functionality and optimizations;",
-				"Developed various QoL enhancements alongside new feature implementation.",
-				"Obsidian development: Obsidian, CustomJS, QuickAdd, Dataview and other plugin APIs.",
+				"Implemented enhancements and optimizations to the caching system and entity managers;",
+				"Obsidian development: Obsidian, CustomJS, QuickAdd, Dataview.",
 				"Web technologies: HTML, CSS, DOM, JavaScript."
 			],
 			"url": "https://github.com/attole/obsidian-codebase"
@@ -144,14 +150,13 @@
 			"highlights": [
 				"Architected a clean monolithic system from the ground up, aligned with modern best practices;",
 				"Implemented core functionality and contributed to establishing team coding standards;",
-				"Set up and managed database schemas from the ground up, ensuring optimization and maintenance;",
-				"Implemented JWT-based authorization and managed SignalR sessions;",
+				"Set up database schemas, ensuring optimization and maintenance, implemented JWT-based authorization and SignalR sessions;",
 				"Initialized and maintained project infrastructure;",
 				"Actively participated in planning, code reviews, and team communications.",
-				"Backend: ASP.NET Wep API (REST), ASP.NET Core Identity, Google Maps Platform.",
+				"Backend: ASP.NET Web API (REST), ASP.NET Core Identity, Google Maps Platform, xUnit, Moq, Swagger",
 				"Databases: EF Core, PostgreSQL, Redis.",
 				"Frontend: Angular (v20), Angular Material (v3), RxJS, Google Maps Platform.",
-				"Infrastructure: Git, Docker, Swagger."
+				"Infrastructure: Git, Docker"
 			],
 			"url": "https://github.com/attole/MeetPoint"
 		},
