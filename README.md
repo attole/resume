@@ -53,7 +53,7 @@ cp ./src/base/resume.html ./src/edited
 # check ./src/edited/tips.txt for details on my changes to html
 
 # create copy of the final version under ./docs/index.html for hosting
-cp -force .\src\edited\resume.html .\docs\index.html
+cp -force ./src/edited/resume.html ./docs/index.html
 
 # generate PDF
 npm run generate-pdf
