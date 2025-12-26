@@ -50,7 +50,7 @@ npx resumed render ./src/base/resume.json -o ./src/base/resume.html
 cp ./src/base/resume.html ./src/edited
 
 # edit copy to whatever needed
-# check [tips](./src/edited/tips.txt) for details on my changes to html
+# check ./src/edited/tips.txt for details on my changes to html
 
 # create copy of the final version under ./docs/index.html for hosting
 cp -force .\src\edited\resume.html .\docs\index.html
