@@ -52,7 +52,8 @@ cp ./src/base/resume.html ./src/edited
 # edit copy to whatever needed
 # check ./src/edited/tips.txt for details on my changes to html
 
-# create copy of the final version under ./docs/index.html for hosting
+# for hosting create copy of the final version under ./docs/index.html
+# and update path to images (../../docs/images/  -> images/)
 cp -force ./src/edited/resume.html ./docs/index.html
 
 # generate PDF
