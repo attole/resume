@@ -550,15 +550,14 @@
       display: block;
       }
       }
+      @page {
+      size: A4;
+      margin: 5mm 10mm 0;
+      }
       @media print {
-      #profiles a:not(.hide-href-print)::after{
-      content: " (" attr(href) ") ";
-      }
-      #profiles .url .show-only-url-print {
-      display: none;
-      }
-      #profiles .url a::after {
-      content: attr(href);
+      body,
+      html {
+      font-size: 12px;
       }
       #resume {
       margin: 0.1em;
@@ -567,8 +566,22 @@
       word-wrap: break-word;
       line-height: 1.25;
       }
-      @page {
-      margin: 1cm 1.4cm;
+      .section:last-of-type,
+      #resume,
+      body {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      }
+      #languages {
+      display: flex;
+      flex-direction: row;
+      }
+      #languages .item {
+      margin: 0 2em 0 0;
+      }
+      #languages .language,
+      #languages .item .item {
+      display: inline-block;
       }
       .item-count {
       display: none;
@@ -587,7 +600,7 @@
       background: transparent;
       }
       .section {
-      margin: 0.8rem 0;
+      margin: 0.5rem 0;
       padding: 0;
       }
       .section header {
@@ -610,7 +623,7 @@
       color: #828386;
       }
       ul {
-      margin-top: 0.4em;
+      margin-top: 0.2em;
       }
       ul,
       li {
@@ -651,7 +664,7 @@
       margin: 0.3em 0 0 0;
       }
       .highlights > li > p {
-      margin-bottom: 0.3em;
+      margin-bottom: 0.15em;
       }
       ul.keywords::before {
       content: "Skills: ";
@@ -781,7 +794,7 @@
               <p><b>Frontend / Web:</b> HTML, CSS/SCSS, DOM, Angular (v20), RxJS, HTTP, REST APIs, JWT, Swagger, Postman</p>
             </li>
             <li>
-              <p><b>Infrastructure:</b> Git, Docker, VMs, basics of RabbitMQ, Azue, AWS</p>
+              <p><b>Infrastructure:</b> Git, Docker, VMs, basics of RabbitMQ, Azure, AWS</p>
             </li>
           </ul>
         </div>
@@ -816,9 +829,7 @@
                 <p>Implemented core functionality and contributed to establishing team coding standards;</p>
               </li>
               <li>
-                <p>
                 <p>Set up database schemas, ensuring optimization and maintenance, implemented JWT-based authorization and SignalR sessions;</p>
-                </p>
               </li>
               <li>
                 <p>Initialized and maintained project infrastructure;</p>
@@ -826,7 +837,7 @@
               <li>
                 <p>Actively participated in planning, code reviews, and team communications.</p>
               </li>
-              <p><b>Backend</b> ASP.NET (Web API), ASP.NET Core Identity, Google Maps Platform, EF Core, PostgreSQL, Redis, xUnit, Moq, Swagger.</p>
+              <p><b>Backend:</b> ASP.NET (Web API), ASP.NET Core Identity, Google Maps Platform, EF Core, PostgreSQL, Redis, xUnit, Moq, Swagger.</p>
               <p><b>Frontend:</b> Angular (v20), Angular Material (v3), RxJS, Google Maps Platform.</p>
               <p><b>Infrastructure:</b> Git, Docker</p>
             </ul>
@@ -903,7 +914,7 @@
             </div>
         </section>
         <section class="project-item">
-          <label for="project-item-0"></label>
+          <label for="project-item-1"></label>
           <header class="clear">
             <div class="position">Obsidian codebase</div>
             <div class="date">
@@ -950,7 +961,7 @@
               <div class="studyType">
                 Bachelor of Software Engineering, Faculty of Applied Mathematics
               </div>
-              </br>
+              <br />
               <div>
                 National Technical University of Ukraine &quot;Igor Sikorsky Kyiv Polytechnic Institute&quot;
               </div>

@@ -1,61 +1,43 @@
 # Resume
 
-> Personal resume in JSON format along with the scripts used to generate HTML and PDF versions.
-> The HTML version is hosted on GitHub Pages. This repo is for managing and hosting my resume, not a general resume generator.
+> Personal resume as a single hand-maintained HTML file, with a script to generate the PDF version.
+> The HTML is hosted on GitHub Pages. This repo is for managing and hosting my resume, not a general resume generator.
 
 ---
 
 ## Resume Versions
 
 - [Hosted HTML version](https://attole.github.io/resume/)
-- [PDF version](./src/edited/resume.pdf)
+- [PDF version](https://attole.github.io/resume/resume.pdf)
 
-## Tools / Technologies Used
+## Structure
 
-- [JSON Resume](https://jsonresume.org/) - JSON format for resume
-- [resumed CLI](https://www.npmjs.com/package/resumed) - init, validate and render JSON to HTML
-- [StackOverflow theme](https://www.npmjs.com/package/jsonresume-theme-stackoverflow) - HTML theme
-- [Node.js](https://nodejs.org/) - runtime for scripts
-- [wkhtmltopdf](https://www.npmjs.com/package/wkhtmltopdf) - HTML to PDF conversion
-- [GitHub Pages](https://pages.github.com/) - hosting HTML
+```
+docs/               GitHub Pages publishing root
+  index.html        the resume - single source of truth (content + inline CSS)
+  resume.pdf        generated PDF
+  images/           photos and other assets, referenced as images/...
+generate-pdf.ps1    Windows: shrinks images, then prints docs/index.html to docs/resume.pdf via headless Chrome
+generate-pdf.sh     Linux/macOS: same flow (image shrink needs ImageMagick, skipped if absent)
+```
 
-## Build / Generate
+The HTML was originally rendered from [JSON Resume](https://jsonresume.org/) with the
+[StackOverflow theme](https://www.npmjs.com/package/jsonresume-theme-stackoverflow), then heavily
+hand-edited and currently no JSON pipeline is used, edited HTML is the only source.
 
-An external HTML to PDF converter is used because the HTML is manually polished before conversion, so `resumed export` cannot be applied.
+## Prerequisites
 
-If you want to use this repo on your own workflow:
+- Google Chrome (the PDF is printed via headless Chrome)
+
+## Workflow
 
 ```bash
-git clone https://github.com/attole/resume.git
-cd resume
+# edit docs/index.html directly
+# new photos can be dropped into docs/images at full resolution - they get shrunk automatically
 
-# install dependencies
-npm install
+# regenerate PDF (one-page layout tuned via @page / @media print rules in the html)
+./generate-pdf.ps1   # Windows
+./generate-pdf.sh    # Linux/macOS
 
-# edit json file
-# or create a new one:
-npx resumed init ./src/base/resume.json
-
-# any images on should be located under ./docs/images and referenced by:
-# - ../../docs/images/ for local/non-hosted HTML
-# - images/ for hosted HTML
-
-# validate on big changes
-npx resumed validate ./src/base/resume.json
-
-# generate HTML
-npx resumed render ./src/base/resume.json -o ./src/base/resume.html
-
-# create copy to ./edited
-cp ./src/base/resume.html ./src/edited
-
-# edit copy to whatever needed
-# check ./src/edited/tips.txt for details on my changes to html
-
-# for hosting create copy of the final version under ./docs/index.html
-# and update path to images (../../docs/images/  -> images/)
-cp -force ./src/edited/resume.html ./docs/index.html
-
-# generate PDF
-npm run generate-pdf
+# commit and push - GitHub Pages serves docs/ automatically
 ```
