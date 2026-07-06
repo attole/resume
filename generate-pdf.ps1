@@ -2,8 +2,8 @@
 # One-page layout is tuned via the @page and @media print rules in the html.
 # If output shows stale assets (e.g. old image), delete %TEMP%\resume-pdf-profile and rerun.
 
-$MaxWidth = 360
-$JpegQuality = 85
+$MaxWidth = 480
+$JpegQuality = 92
 $Chrome = 'C:\Program Files\Google\Chrome\Application\chrome.exe'
 
 # --- shrink images (idempotent: skips anything already at or below MaxWidth) ---
