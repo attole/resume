@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -42,7 +42,7 @@
         font-size: 13px;
         color: #40484f;
         font-weight: 400;
-        line-height: 1.46;
+        line-height: 1.5;
         text-align: left;
       }
       a {
@@ -72,11 +72,17 @@
         clear: both;
       }
 
-      /* header */
+      /* header: photo top-aligned with name, bottom-aligned with last info row */
+      #header {
+        display: flex;
+        justify-content: space-between;
+      }
       #header .image {
-        width: 9em;
-        float: right;
+        width: 7.2em;
+        height: 7.2em;
+        object-fit: cover;
         border-radius: 4px;
+        align-self: flex-start;
       }
       #header h2.name {
         font-size: 1.8rem;
@@ -88,17 +94,17 @@
         font-size: 1.47rem;
         font-weight: 300;
       }
-      #header > div {
+      .header-info > div {
         line-height: 1.5;
       }
-      #header > div > div {
+      .header-info > div > div {
         margin-right: 1.2em;
       }
       #contact {
         margin-top: 0.5rem;
       }
-      #header > #profiles,
-      #header > #contact {
+      #profiles,
+      #contact {
         display: flex;
         flex-flow: row wrap;
         justify-content: flex-start;
@@ -108,9 +114,6 @@
       }
       .linkedin {
         color: #007bb6;
-      }
-      .telegram {
-        color: #2291c3;
       }
 
       /* sections */
@@ -134,7 +137,7 @@
         background: #ccc;
         content: "";
         width: 100%;
-        z-index: -100;
+        z-index: -1;
         display: block;
       }
       .section.summary header {
@@ -170,14 +173,8 @@
         float: left;
         width: 70%;
       }
-      .highlights {
-        margin: 0.3em 0 0 0;
-      }
-      #skills .highlights,
-      #skills ul,
-      #languages .highlights,
-      #languages ul {
-        margin-top: 0;
+      .item > .highlights {
+        margin-top: 0.3em;
       }
       .highlights p,
       .highlights li {
@@ -186,6 +183,10 @@
       .highlights li:hover,
       .highlights p:hover {
         background: #dfeaf0;
+      }
+      .work-item .summary p,
+      .project-item .summary p {
+        font-style: italic;
       }
 
       /* responsive */
@@ -196,9 +197,6 @@
         }
       }
       @media screen and (min-width: 1025px) {
-        li {
-          margin-left: 1.5em;
-        }
         #resume {
           width: 820px;
           margin: 2rem auto;
@@ -211,17 +209,12 @@
         margin: 10mm;
       }
       @media print {
-        body,
-        html {
-          font-size: 13px;
-        }
         #resume {
           margin: 0;
           padding: 0;
           word-wrap: break-word;
-          line-height: 1.18;
+          line-height: 1.25;
         }
-        body,
         .section:last-of-type {
           margin-bottom: 0;
           padding-bottom: 0;
@@ -241,13 +234,6 @@
         .section.summary {
           margin-bottom: 0.9rem;
         }
-        ul {
-          margin-top: 0.1em;
-        }
-        ul,
-        li {
-          padding: 0;
-        }
         .highlights > li > p {
           margin-bottom: 0.1em;
         }
@@ -260,36 +246,30 @@
   </head>
   <body>
     <div id="resume">
-    <header id="header" class="clear">
+    <header id="header">
+      <div class="header-info">
+        <div>
+          <h2 class="name">Sergii Kucherenko</h2>
+          <h3 class="label">full-stack developer</h3>
+        </div>
+        <div id="contact">
+          <div>
+            <span class="fa-regular fa-envelope"></span>
+            <a href="mailto:sergii.kucherenko.a24d3@gmail.com">sergii.kucherenko.a24d3@gmail.com</a>
+          </div>
+        </div>
+        <div id="profiles">
+          <div class="item">
+            <span class="fa-brands fa-linkedin linkedin"></span>
+            <a target="_blank" href="https://www.linkedin.com/in/sergii-kucherenko/">Sergii Kucherenko</a>
+          </div>
+          <div class="item">
+            <span class="fa-brands fa-github github"></span>
+            <a target="_blank" href="https://github.com/attole">attole</a>
+          </div>
+        </div>
+      </div>
       <img class="image" src="images/selfie.jpg" alt="Sergii Kucherenko" />
-      <div>
-        <h2 class="name">Sergii Kucherenko</h2>
-        <h3 class="label">full-stack developer</h3>
-      </div>
-      <div id="contact">
-        <div>
-          <span class="fa-regular fa-envelope"></span>
-          <a href="mailto:sergii.kucherenko.a24d3@gmail.com">sergii.kucherenko.a24d3@gmail.com</a>
-        </div>
-        <div>
-          <span class="fa-solid fa-mobile-screen-button"></span>
-          <a href="tel:+380980466027">+380 98 046 6027</a>
-        </div>
-      </div>
-      <div id="profiles">
-        <div class="item">
-          <span class="fa-brands fa-github github"></span>
-          <a target="_blank" href="https://github.com/attole">attole</a>
-        </div>
-        <div class="item">
-          <span class="fa-brands fa-linkedin linkedin"></span>
-          <a target="_blank" href="https://www.linkedin.com/in/sergii-kucherenko/">Sergii Kucherenko</a>
-        </div>
-        <div class="item">
-          <span class="fa-brands fa-telegram telegram"></span>
-          <a target="_blank" href="https://t.me/attole">@attole</a>
-        </div>
-      </div>
     </header>
     <section class="section summary">
       <header>
@@ -298,14 +278,14 @@
       <section class="main-summary">
         <div>
           <p>
-              Full-stack developer (C#, SQL, JS, TS) experienced in building production applications with .NET and ASP.NET Core: layered architecture, ORMs, SQL/NoSQL databases, unit and integration testing, and third-party integrations with SOAP and REST APIs. Also have hands-on experience with authentication, concurrency handling, caching, and Docker. Focused on building clean, scalable, and maintainable systems. Deeply invested in AI-assisted development, using Claude Code with MCP-based automation and custom tooling for daily workflows.
+              Full-stack developer (C#, SQL, JS, TS) experienced in building production applications with .NET and ASP.NET Core: layered architecture, ORMs, SQL/NoSQL databases, unit and integration testing, and third-party integrations with SOAP and REST APIs. Also, I have hands-on experience with authentication, concurrency handling, caching, and Docker containerization. Focused on building clean, scalable, and maintainable systems. Deeply invested in AI-assisted development, using Claude Code with MCP-based automation and custom tooling for daily workflows.
           </p>
         </div>
       </section>
     </section>
     <section class="section">
       <header>
-        <h2 class="section-title">Work Experience <span class="item-count">(2)</span></h2>
+        <h2 class="section-title">Experience <span class="item-count">(2)</span></h2>
       </header>
       <section id="work">
         <section class="work-item">
@@ -324,7 +304,7 @@
             </div>
             <ul class="highlights">
               <li>
-                <p>Built end-to-end DAFpay integration: HMAC-verified idempotent webhooks, Postman integration tests</p>
+                <p>Initiated Claude Code adoption, guiding the team on secure MCP setup (Jira, SQL Server, git), and engineered a multi-repo knowledge system with cached codebase maps, staleness detection, Python-linted schemas, and custom skills</p>
               </li>
               <li>
                 <p>Developed PayPal transaction-fee reconciliation pipeline over NVP and REST APIs, backed by EF6 and a stored-procedure-centric SQL Server layer (T-SQL)</p>
@@ -333,13 +313,13 @@
                 <p>Designed provider-agnostic email infrastructure with fallback chains as internal REST API, unit-tested with xUnit and Moq</p>
               </li>
               <li>
+                <p>Built end-to-end DAFpay integration: HMAC-verified idempotent webhooks, Postman integration tests</p>
+              </li>
+              <li>
                 <p>Shipped platform-wide donation checkout rollout across Stripe and other payment providers, rebuilt centralized input validation, and delivered production fixes driven by log analysis</p>
               </li>
               <li>
                 <p>Drove legacy minimization and upgrade of a WebForms monolith (.NET Framework 4.5 to 4.8) with unified unit testing</p>
-              </li>
-              <li>
-                <p>Initiated Claude Code adoption, guiding the team on secure MCP setup (Jira, SQL Server, git), and engineered a multi-repo knowledge system with cached codebase maps, staleness detection, Python-linted schemas, and custom skills</p>
               </li>
             </ul>
           </div>
@@ -429,10 +409,10 @@
               <p><b>Integrations:</b> REST, SOAP, webhook-driven payment flows (Stripe, PayPal, DAFpay), email (Mailgun, SMTP)</p>
             </li>
             <li>
-              <p><b>Frontend:</b> Angular (v20), AngularJS, jQuery, Razor, HTML, CSS/SCSS, RxJS</p>
+              <p><b>AI tooling:</b> Claude Code, MCP servers, agent workflow automation, custom skills and caching</p>
             </li>
             <li>
-              <p><b>AI tooling:</b> Claude Code, MCP servers, agent workflow automation, custom skills and caching</p>
+              <p><b>Frontend:</b> Angular (v20), AngularJS, jQuery, Razor, HTML, CSS/SCSS, RxJS</p>
             </li>
             <li>
               <p><b>Infrastructure:</b> AWS (ECS, Lambda, S3, KMS), Docker, Cloudflare, Bitbucket Pipelines, Git, basics of RabbitMQ, Azure</p>
