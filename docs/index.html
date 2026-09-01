@@ -1,10 +1,9 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-    <title>Sergii Kucherenko</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sergii Kucherenko - .NET Backend Developer</title>
     <style>
       /* reset */
       html,
@@ -13,10 +12,10 @@
       span,
       p,
       a,
-      img,
-      b,
+      strong,
       ul,
       li,
+      h1,
       h2,
       h3,
       section,
@@ -27,30 +26,24 @@
         font-size: 100%;
         vertical-align: baseline;
       }
-      section,
-      header {
-        display: block;
-      }
-      ul {
-        list-style: none;
-      }
 
       /* base */
       body,
       html {
         font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-        font-size: 13px;
+        font-size: 14px;
         color: #40484f;
+        background: #fff;
+        color-scheme: light;
         font-weight: 400;
         line-height: 1.5;
-        text-align: left;
       }
       a {
-        color: #0095ff;
+        color: #0c65a5;
         text-decoration: none;
       }
       a:hover {
-        color: #0c65a5;
+        color: #084a7a;
         text-decoration: underline;
       }
       li {
@@ -64,50 +57,41 @@
         padding: 1.5rem;
       }
       .section {
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem;
       }
-      .clear::after {
-        content: "";
-        display: table;
-        clear: both;
-      }
-
-      /* header: photo top-aligned with name, bottom-aligned with last info row */
+      /* header: name block left, contacts right, bottom-aligned */
       #header {
         display: flex;
         justify-content: space-between;
+        align-items: flex-end;
+        gap: 1.5rem;
       }
-      #header .image {
-        width: 7.2em;
-        height: 7.2em;
-        object-fit: cover;
-        border-radius: 4px;
-        align-self: flex-start;
+      #header .name {
+        font-size: 1.3rem;
+        font-weight: 600;
+        line-height: 1.2;
       }
-      #header h2.name {
-        font-size: 1.8rem;
-        font-weight: 100;
-        line-height: 100%;
+      #header .label {
+        margin-top: 0.2em;
+        font-size: 1.1rem;
+        font-weight: 500;
       }
-      #header h3.label {
-        color: #202931;
-        font-size: 1.47rem;
-        font-weight: 300;
+      #header .langs,
+      #header .location {
+        margin-top: 0.2em;
       }
-      .header-info > div {
-        line-height: 1.5;
-      }
-      .header-info > div > div {
-        margin-right: 1.2em;
-      }
-      #contact {
-        margin-top: 0.5rem;
-      }
-      #profiles,
-      #contact {
+      .header-meta {
         display: flex;
-        flex-flow: row wrap;
-        justify-content: flex-start;
+        flex-direction: column;
+        align-items: flex-end;
+      }
+      .header-meta > div + div {
+        margin-top: 0.2em;
+      }
+      .icon {
+        width: 1em;
+        height: 1em;
+        vertical-align: -0.125em;
       }
       .github {
         color: #171515;
@@ -117,61 +101,63 @@
       }
 
       /* sections */
+      .section > header {
+        display: flex;
+        align-items: center;
+        gap: 1em;
+        padding-bottom: 0.3em;
+      }
+      .section > header::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: #ccc;
+      }
       .section-title {
-        display: inline-block;
-        background: #fff;
-        padding: 0 1em 0.3em 0;
-        color: #ff6d1f;
+        color: #c2410c;
         text-transform: uppercase;
         font-weight: 600;
         font-size: 0.9rem;
       }
-      .section > header {
-        position: relative;
-      }
-      .section > header::after {
-        position: absolute;
-        left: 0;
-        top: 0.7em;
-        height: 1px;
-        background: #ccc;
-        content: "";
-        width: 100%;
-        z-index: -1;
-        display: block;
-      }
-      .section.summary header {
-        margin-top: 1rem;
+      .section.summary > header {
+        margin-top: 1.4rem;
       }
       .main-summary {
         background: #f1f8ff;
         padding: 1.2em 1em;
       }
+      .main-summary p {
+        font-size: 1.05rem;
+      }
 
       /* entries: uniform gap from section title, uniform gap between entries */
       .section > section {
-        margin-top: 0.5em;
+        margin-top: 0.3em;
       }
-      .section > section > section + section {
+      .work-item + .work-item,
+      .project-item + .project-item {
         margin-top: 0.9em;
       }
-      .position,
-      .date,
-      .studyType {
-        display: inline;
+      .work-item > header,
+      .project-item > header,
+      .education-item > header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 1em;
       }
-      .position,
-      .studyType {
+      .position {
         font-weight: 600;
       }
-      .section header .date {
-        float: right;
+      .date {
         font-weight: 600;
         color: #000;
+        white-space: nowrap;
       }
-      .header-left {
-        float: left;
-        width: 70%;
+      .work-item > .item,
+      .project-item > .item,
+      .education-item > .item {
+        margin-top: 0.25em;
       }
       .item > .highlights {
         margin-top: 0.3em;
@@ -179,10 +165,6 @@
       .highlights p,
       .highlights li {
         margin-bottom: 0.3em;
-      }
-      .highlights li:hover,
-      .highlights p:hover {
-        background: #dfeaf0;
       }
       .work-item .summary p,
       .project-item .summary p {
@@ -212,256 +194,257 @@
         #resume {
           margin: 0;
           padding: 0;
-          word-wrap: break-word;
+          overflow-wrap: break-word;
           line-height: 1.25;
-        }
-        .section:last-of-type {
-          margin-bottom: 0;
-          padding-bottom: 0;
-        }
-        .item-count {
-          display: none;
-        }
-        .main-summary {
-          padding: 0.4em 0.8em;
-          background: #f1f8ff;
+          orphans: 2;
+          widows: 2;
           -webkit-print-color-adjust: exact;
           print-color-adjust: exact;
         }
-        .section {
-          margin: 0.7rem 0;
+        .section:last-of-type {
+          margin-bottom: 0;
         }
-        .section.summary {
-          margin-bottom: 0.9rem;
+        .section.summary > header {
+          margin-top: 1rem;
+        }
+        .project-item,
+        .education-item,
+        .work-item > header,
+        .highlights li {
+          break-inside: avoid;
+          page-break-inside: avoid;
+        }
+        .main-summary {
+          padding: 0.4em 0.8em;
+        }
+        .section {
+          margin: 0 0 1rem;
         }
         .highlights > li > p {
           margin-bottom: 0.1em;
         }
+        .highlights li {
+          margin-bottom: 0.2em;
+        }
         .section p {
           margin: 0;
-          padding: 0;
         }
       }
     </style>
   </head>
   <body>
-    <div id="resume">
-    <header id="header">
-      <div class="header-info">
+    <main id="resume">
+      <header id="header">
         <div>
-          <h2 class="name">Sergii Kucherenko</h2>
-          <h3 class="label">full-stack developer</h3>
+          <h1 class="name">Sergii Kucherenko</h1>
+          <p class="label">.NET Backend Developer</p>
+          <div class="langs">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            English (Advanced), Ukrainian (Native)
+          </div>
+          <div class="location">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Bulgaria (UTC+2), remote, open to relocation
+          </div>
         </div>
-        <div id="contact">
+        <div class="header-meta">
           <div>
-            <span class="fa-regular fa-envelope"></span>
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
             <a href="mailto:sergii.kucherenko.a24d3@gmail.com">sergii.kucherenko.a24d3@gmail.com</a>
           </div>
-        </div>
-        <div id="profiles">
-          <div class="item">
-            <span class="fa-brands fa-linkedin linkedin"></span>
-            <a target="_blank" href="https://www.linkedin.com/in/sergii-kucherenko/">Sergii Kucherenko</a>
+          <div>
+            <svg class="icon linkedin" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/></svg>
+            <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/sergii-kucherenko/">linkedin.com/in/sergii-kucherenko</a>
           </div>
-          <div class="item">
-            <span class="fa-brands fa-github github"></span>
-            <a target="_blank" href="https://github.com/attole">attole</a>
+          <div>
+            <svg class="icon github" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+            <a target="_blank" rel="noopener noreferrer" href="https://github.com/attole">github.com/attole</a>
           </div>
         </div>
-      </div>
-      <img class="image" src="images/selfie.jpg" alt="Sergii Kucherenko" />
-    </header>
-    <section class="section summary">
-      <header>
-        <h2 class="section-title">summary</h2>
       </header>
-      <section class="main-summary">
-        <div>
+      <section class="section summary">
+        <header>
+          <h2 class="section-title">summary</h2>
+        </header>
+        <section class="main-summary">
           <p>
-              Full-stack developer (C#, SQL, JS, TS) experienced in building production applications with .NET and ASP.NET Core: layered architecture, ORMs, SQL/NoSQL databases, unit and integration testing, and third-party integrations with SOAP and REST APIs. Also, I have hands-on experience with authentication, concurrency handling, caching, and Docker containerization. Focused on building clean, scalable, and maintainable systems. Deeply invested in AI-assisted development, using Claude Code with MCP-based automation and custom tooling for daily workflows.
+            Backend developer building APIs and working with infrastructure on AWS - from PayPal and DAFpay integrations to legacy refactoring into modern services on ECS Fargate and EC2. Looking for backend and devops work, a modern stack and AI-assisted workflows.
           </p>
-        </div>
-      </section>
-    </section>
-    <section class="section">
-      <header>
-        <h2 class="section-title">Experience <span class="item-count">(2)</span></h2>
-      </header>
-      <section id="work">
-        <section class="work-item">
-          <header class="clear">
-            <div class="date">
-              <span class="startDate">Nov 2025</span>
-              <span class="endDate">- now</span>
-            </div>
-            <div class="position">RemSoft.Dev - ASP.NET + SQL Developer (outstaff)</div>
-          </header>
-          <div class="item">
-            <div class="summary">
-              <p>
-                Fundraising and donation platform.
-              </p>
-            </div>
-            <ul class="highlights">
-              <li>
-                <p>Initiated Claude Code adoption, guiding the team on secure MCP setup (Jira, SQL Server, git), and engineered a multi-repo knowledge system with cached codebase maps, staleness detection, Python-linted schemas, and custom skills</p>
-              </li>
-              <li>
-                <p>Developed PayPal transaction-fee reconciliation pipeline over NVP and REST APIs, backed by EF6 and a stored-procedure-centric SQL Server layer (T-SQL)</p>
-              </li>
-              <li>
-                <p>Designed provider-agnostic email infrastructure with fallback chains as internal REST API, unit-tested with xUnit and Moq</p>
-              </li>
-              <li>
-                <p>Built end-to-end DAFpay integration: HMAC-verified idempotent webhooks, Postman integration tests</p>
-              </li>
-              <li>
-                <p>Shipped platform-wide donation checkout rollout across Stripe and other payment providers, rebuilt centralized input validation, and delivered production fixes driven by log analysis</p>
-              </li>
-              <li>
-                <p>Drove legacy minimization and upgrade of a WebForms monolith (.NET Framework 4.5 to 4.8) with unified unit testing</p>
-              </li>
-            </ul>
-          </div>
-        </section>
-        <section class="work-item">
-          <header class="clear">
-            <div class="date">
-              <span class="startDate">Dec 2024</span>
-              <span class="endDate">- Aug 2025</span>
-            </div>
-            <div class="position">MeetPoint - Full-stack Developer</div>
-          </header>
-          <div class="item">
-            <div class="summary">
-              <p>
-                Noncommercial team project - web application for organizing meetups by calculating optimal locations for multiple users.
-              </p>
-            </div>
-            <ul class="highlights">
-              <li>
-                <p>Architected a monolithic web application from the ground up</p>
-              </li>
-              <li>
-                <p>Designed and maintained PostgreSQL database schemas with EF Core, implemented JWT-based authorization (ASP.NET Identity), Redis caching, and SignalR sessions</p>
-              </li>
-              <li>
-                <p>Integrated Google Maps Platform SDK and documented REST APIs with Swagger</p>
-              </li>
-              <li>
-                <p>Set up project infrastructure and contributed to establishing team coding standards</p>
-              </li>
-            </ul>
-          </div>
         </section>
       </section>
-    </section>
-    <section class="section">
-      <header>
-        <h2 class="section-title">Projects <span class="item-count">(1)</span></h2>
-      </header>
-      <section id="projects">
-        <section class="project-item">
-          <header class="clear">
-            <div class="position">ETL CLI tool</div>
-            <div class="date">
-              <span class="startDate">Oct 2025</span>
-            </div>
-          </header>
-          <div class="item">
-            <div class="summary">
-              <p>
-                CLI tool for preprocessing and bulk-importing large CSV datasets into SQL Server.
-              </p>
-            </div>
-            <ul class="highlights">
-              <li>
-                <p>Implemented streamed, type-agnostic CSV import to handle large files efficiently</p>
-              </li>
-              <li>
-                <p>Designed data preprocessing pipeline for dataset cleaning and transformation with memory-optimized bulk inserts</p>
-              </li>
-              <li>
-                <p>Developed MSSQL database schema with computed columns and performance-focused indexes</p>
-              </li>
-            </ul>
-          </div>
-        </section>
-      </section>
-    </section>
-    <section class="section">
-      <header>
-        <h2 class="section-title">Skills</h2>
-      </header>
-      <section id="skills">
-        <div class="highlights">
-          <ul>
-            <li>
-              <p><b>Languages:</b> C#, SQL (T-SQL), JavaScript, TypeScript - OOP, OOD, SOLID</p>
-            </li>
-            <li>
-              <p><b>Backend:</b> ASP.NET Core and .NET Framework 4.x - Web API, MVC, Web Forms, Worker Services, SignalR, xUnit, Moq</p>
-            </li>
-            <li>
-              <p><b>Databases:</b> SQL Server, Entity Framework (Core and EF6), PostgreSQL, MySQL, Redis</p>
-            </li>
-            <li>
-              <p><b>Integrations:</b> REST, SOAP, webhook-driven payment flows (Stripe, PayPal, DAFpay), email (Mailgun, SMTP)</p>
-            </li>
-            <li>
-              <p><b>AI tooling:</b> Claude Code, MCP servers, agent workflow automation, custom skills and caching</p>
-            </li>
-            <li>
-              <p><b>Frontend:</b> Angular (v20), AngularJS, jQuery, Razor, HTML, CSS/SCSS, RxJS</p>
-            </li>
-            <li>
-              <p><b>Infrastructure:</b> AWS (ECS, Lambda, S3, KMS), Docker, Cloudflare, Bitbucket Pipelines, Git, basics of RabbitMQ, Azure</p>
-            </li>
-          </ul>
-        </div>
-      </section>
-    </section>
-    <section class="section">
-      <header>
-        <h2 class="section-title">Education <span class="item-count">(1)</span></h2>
-      </header>
-      <section id="education">
-        <section class="education-item">
-          <header class="clear">
-            <div class="date">
-              <span class="startDate">2021</span>
-              <span class="endDate">- 2025</span>
-            </div>
-            <div class="header-left">
-              <div class="studyType">
-                Bachelor of Software Engineering, Faculty of Applied Mathematics
+      <section class="section">
+        <header>
+          <h2 class="section-title">Experience</h2>
+        </header>
+        <section id="work">
+          <section class="work-item">
+            <header>
+              <h3 class="position">RemSoft.Dev - Middle ASP.NET + SQL Developer</h3>
+              <div class="date">
+                <span class="start-date">Sep 2024</span>
+                <span class="end-date">- Present</span>
               </div>
-              <br />
-              <div>
-                National Technical University of Ukraine &quot;Igor Sikorsky Kyiv Polytechnic Institute&quot;
+            </header>
+            <div class="item">
+              <div class="summary">
+                <p>
+                  Fundraising platform for 5,000+ nonprofits and 4M donors.
+                </p>
               </div>
+              <ul class="highlights">
+                <li>
+                  <p>Replaced manual releases with two-stage CI/CD and tracked SQL migrations, split between CodeDeploy to EC2 and ECR to ECS Fargate with OpenTelemetry</p>
+                </li>
+                <li>
+                  <p>Owned DAFpay integration from estimate to production, with HMAC verification and idempotent webhooks</p>
+                </li>
+                <li>
+                  <p>Developed fee reconciliation over PayPal Classic API (NVP and SOAP) on EF6, recovering 60-100 donations that had taken 3-4 hours to backfill by hand monthly, plus an admin API that cleared 8 years of backlog</p>
+                </li>
+                <li>
+                  <p>Extracted email and file handling into standalone minimal Web API services, orchestrated locally with Aspire, adding provider-agnostic fallbacks and moving storage to S3 with CDN and access-checked streaming</p>
+                </li>
+                <li>
+                  <p>Drove legacy minimization and hardening - .NET 4.5 to 4.8, 25 projects down to 7, builds 3x faster - unifying unit testing, rebuilding CSRF protection and input sanitization, and moving secrets to AWS Secrets Manager</p>
+                </li>
+                <li>
+                  <p>Initiated team-wide Claude Code adoption, with conventions and MCP servers for Jira, SQL Server and Git</p>
+                </li>
+              </ul>
             </div>
-          </header>
+          </section>
+          <section class="work-item">
+            <header>
+              <h3 class="position">MeetPoint - Full-stack Developer</h3>
+              <div class="date">
+                <span class="start-date">Aug 2023</span>
+                <span class="end-date">- Jul 2024</span>
+              </div>
+            </header>
+            <div class="item">
+              <div class="summary">
+                <p>
+                  Non-commercial team project - meetup planner.
+                </p>
+              </div>
+              <ul class="highlights">
+                <li>
+                  <p>Built the backend as an ASP.NET Core Web API on clean architecture, with PostgreSQL and EF Core, JWT auth over ASP.NET Identity, a SignalR Redis backplane and Docker Compose for local runs</p>
+                </li>
+                <li>
+                  <p>Integrated Google Maps APIs into the Angular frontend, computing distances locally to avoid repeat calls</p>
+                </li>
+              </ul>
+            </div>
+          </section>
         </section>
       </section>
-    </section>
-    <section class="section">
-      <header>
-        <h2 class="section-title">Languages</h2>
-      </header>
-      <section id="languages">
-        <div class="highlights">
-          <ul>
-            <li>
-              <p><b>English</b> - Advanced</p>
-            </li>
-            <li>
-              <p><b>Ukrainian</b> - Native speaker</p>
-            </li>
-          </ul>
-        </div>
+      <section class="section">
+        <header>
+          <h2 class="section-title">Projects</h2>
+        </header>
+        <section id="projects">
+          <section class="project-item">
+            <header>
+              <h3 class="position">Claude Code multi-repo knowledge system - <a target="_blank" rel="noopener noreferrer" href="https://github.com/attole/claude-multirepo-knowledge-system">GitHub</a></h3>
+              <div class="date">
+                <span class="start-date">Jul 2026</span>
+              </div>
+            </header>
+            <div class="item">
+              <div class="summary">
+                <p>
+                  Agentic development workspace for a legacy multi-repo .NET codebase.
+                </p>
+              </div>
+              <ul class="highlights">
+                <li>
+                  <p>Authored, benchmarked and iterated 11 skills for explore, review and QA workflows</p>
+                </li>
+                <li>
+                  <p>Cached codebase facts and pitfalls in staleness-checked maps, with a Python grader, linters and deny rules</p>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <section class="project-item">
+            <header>
+              <h3 class="position">ETL CLI tool - <a target="_blank" rel="noopener noreferrer" href="https://github.com/attole/etl-cli-test-project">GitHub</a></h3>
+              <div class="date">
+                <span class="start-date">Jul 2024</span>
+              </div>
+            </header>
+            <div class="item">
+              <div class="summary">
+                <p>
+                  Console tool for preprocessing and bulk-importing large datasets into SQL Server.
+                </p>
+              </div>
+              <ul class="highlights">
+                <li>
+                  <p>Implemented streamed CSV import with CsvHelper and FastMember, without loading files into memory</p>
+                </li>
+                <li>
+                  <p>Designed preprocessing and SqlBulkCopy load into a SQL Server schema with computed columns and indexes</p>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
       </section>
-    </section>
-    </div>
+      <section class="section">
+        <header>
+          <h2 class="section-title">Skills</h2>
+        </header>
+        <section id="skills">
+          <ul class="highlights">
+              <li>
+                <p><strong>Backend:</strong> C#, .NET 10, ASP.NET Core (Web API, MVC, Razor), Aspire, .NET Framework 4.x (Web Forms)</p>
+              </li>
+              <li>
+                <p><strong>Databases:</strong> SQL Server (T-SQL), EF Core, PostgreSQL, Redis</p>
+              </li>
+              <li>
+                <p><strong>Integrations:</strong> payments (PayPal, DAFpay, Stripe), email (Mailgun, SMTP), REST, SOAP, NVP, webhooks</p>
+              </li>
+              <li>
+                <p><strong>Infrastructure:</strong> AWS (ECR, ECS (Fargate), EC2, S3, Secrets Manager, CloudWatch), OpenTelemetry</p>
+              </li>
+              <li>
+                <p><strong>CI/CD and testing:</strong> Bitbucket Pipelines, AWS CodeDeploy, Docker, xUnit, NUnit, Moq, Postman</p>
+              </li>
+              <li>
+                <p><strong>AI tooling:</strong> Claude Code, MCP servers, agent workflow automation (hooks, custom skills, codebase maps)</p>
+              </li>
+              <li>
+                <p><strong>Frontend:</strong> TypeScript, Angular (RxJS), JavaScript, AngularJS, jQuery</p>
+              </li>
+          </ul>
+        </section>
+      </section>
+      <section class="section">
+        <header>
+          <h2 class="section-title">Education</h2>
+        </header>
+        <section id="education">
+          <section class="education-item">
+            <header>
+              <h3 class="position">Bachelor of Software Engineering, Faculty of Applied Mathematics</h3>
+              <div class="date">
+                <span class="start-date">2021</span>
+                <span class="end-date">- 2025</span>
+              </div>
+            </header>
+            <div class="item">
+              <div class="summary">
+                <p>
+                  National Technical University of Ukraine "Igor Sikorsky Kyiv Polytechnic Institute"
+                </p>
+              </div>
+            </div>
+          </section>
+        </section>
+      </section>
+    </main>
   </body>
 </html>

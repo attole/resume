@@ -16,7 +16,7 @@
 docs/               GitHub Pages publishing root
   index.html        the resume - single source of truth (content + inline CSS)
   resume.pdf        generated PDF
-  images/           photos and other assets, referenced as images/...
+  images/           optional photos and assets, referenced as images/... (not used by the current layout)
 generate-pdf.ps1    Windows: shrinks images, then prints docs/index.html to docs/resume.pdf via headless Chrome
 generate-pdf.sh     Linux/macOS: same flow (image shrink needs ImageMagick, skipped if absent)
 ```
@@ -33,7 +33,8 @@ hand-edited and currently no JSON pipeline is used, edited HTML is the only sour
 
 ```bash
 # edit docs/index.html directly
-# new photos can be dropped into docs/images at full resolution - they get shrunk automatically
+# the current layout uses no photo; if one is added back, drop it into docs/images
+# at full resolution and reference it from index.html - the script shrinks it automatically
 
 # regenerate PDF (one-page layout tuned via @page / @media print rules in the html)
 ./generate-pdf.ps1   # Windows
